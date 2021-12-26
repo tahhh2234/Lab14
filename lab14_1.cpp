@@ -17,3 +17,21 @@ int main(){
     cout << "\nMin = " << B[5];
     return 0;
 }
+
+void stat(const double x[], int y, double z[]){
+    double sum = 0, lol = 0, geo = 1, sumr = 0, min = x[0], max = x[0];
+    for(int i = 0; i < y; i++){
+        sum += x[i];
+        lol += pow(x[i],2);
+        geo *= x[i];
+        sumr += 1/x[i];
+        if(x[i] > max) max = x[i];
+        if(x[i] < min) min = x[i];
+    }
+    z[0] = sum/y;
+    z[1] = sqrt((lol/y)-pow(z[0],2));
+    z[2] = pow(geo,1.0/y);
+    z[3] = y/sumr;
+    z[4] = max;
+    z[5] = min;
+}
