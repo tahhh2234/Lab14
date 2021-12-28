@@ -21,3 +21,27 @@ int main()
     }while(s != 0 || x != 0 || y != 0);
     return 0;
 }
+
+void updateImage(bool pic1[][M],int a,int b,int c){
+    for(int u = 0; u < N; u++){
+        for(int v = 0; v < M; v++){
+            if(sqrt(pow(u-b,2)+pow(v-c,2))<=a-1){
+            pic1[u][v] = 1;
+            }
+        }
+    }
+}
+
+
+void showImage(const bool pic2[][M]){
+    cout << "------------------------------------------------------------------------\n";
+    for(int q = 0; q < N; q++){
+        cout << '|';
+        for(int r = 0; r < M; r++){
+            if(pic2[q][r] == 0) cout << " ";
+            if(pic2[q][r] == 1) cout << "*";
+        }
+        cout << '|' << endl;
+    }
+    cout << "------------------------------------------------------------------------" << endl;
+}
